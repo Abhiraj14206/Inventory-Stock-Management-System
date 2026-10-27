@@ -1,138 +1,151 @@
-<div align="center">
+# 📦 StockWise — Inventory and Stock Management System
 
-StockWise
-Inventory and Stock Management System
-A web-based inventory management application built with ASP.NET Core MVC, C#, Entity Framework Core, MySQL, and Bootstrap.
+**A Web-Based Inventory Management Application Using ASP.NET Core MVC, C#, Entity Framework Core, MySQL, and Bootstrap**
 
+---
 
+## 📖 1. About the Project
 
+**StockWise** is a web-based Inventory and Stock Management System developed to simplify the process of managing products, monitoring stock quantities, organizing product categories, and tracking inventory movements.
 
-Manage products. Track stock. Monitor inventory.
+The application provides a centralized platform where users can maintain product information, record stock-in and stock-out transactions, monitor low-stock items, and review inventory-related reports.
 
-Features · Screenshots · Setup · Project Structure
-</div>
+The project uses **ASP.NET Core MVC** for the web application architecture, **Entity Framework Core** for database operations, and **MySQL** for storing inventory information.
 
-📌 About the Project
-StockWise is an inventory and stock management web application designed to help users maintain product records, organize products into categories, record stock-in and stock-out transactions, and identify low-stock items.
+StockWise is designed as an academic and learning project to demonstrate web application development, database integration, CRUD operations, data validation, and inventory management workflows.
 
-The project demonstrates an ASP.NET Core MVC application connected to a MySQL database through Entity Framework Core. It is intended as a learning/academic project and a foundation for further development.
-✨ Features
-- Dashboard — view key inventory information and low-stock items.
-- Product management — create, view, update, and delete product records.
-- SKU validation — help prevent duplicate SKU values.
-- Category management — organize products by category.
-- Stock In / Stock Out — record stock movements and update quantities.
-- Stock validation — prevent a stock-out transaction from exceeding available quantity.
-- Stock movement history — review recorded inventory transactions.
-- Low-stock monitoring — identify products that may need replenishment.
-- Reports — review inventory and stock information.
-- Responsive UI — Bootstrap-based interface for desktop and smaller screens.
-- Database persistence — save application data in MySQL using Entity Framework Core.
-Features can vary with the version of the source code. Keep this list aligned with the pages and functionality implemented in your repository.
+## 🎯 2. Project Objectives
 
-🖼️ Application Screenshots
-Add screenshots captured from your running StockWise application to docs/screenshots/. The images will appear here after you commit them to GitHub.
-<table>
-  <tr>
-    <td align="center"><strong>Dashboard</strong><br><img src="docs/screenshots/dashboard.png" alt="StockWise dashboard screenshot" width="480"></td>
-    <td align="center"><strong>Product List</strong><br><img src="docs/screenshots/products.png" alt="StockWise product list screenshot" width="480"></td>
-  </tr>
-  <tr>
-    <td align="center"><strong>Add Product</strong><br><img src="docs/screenshots/add-product.png" alt="StockWise add product screenshot" width="480"></td>
-    <td align="center"><strong>Stock Movement</strong><br><img src="docs/screenshots/stock-movement.png" alt="StockWise stock movement screenshot" width="480"></td>
-  </tr>
-  <tr>
-    <td align="center" colspan="2"><strong>Reports</strong><br><img src="docs/screenshots/reports.png" alt="StockWise reports screenshot" width="600"></td>
-  </tr>
-</table>
+The main objectives of StockWise are:
 
+- To simplify product and inventory management.
+- To maintain organized product and category records.
+- To track stock additions and stock reductions.
+- To prevent stock-out transactions from exceeding available quantities.
+- To identify products with low stock levels.
+- To maintain inventory movement records.
+- To provide a user-friendly and responsive web interface.
+- To demonstrate the practical use of ASP.NET Core MVC and MySQL.
 
-Screenshot folder layout:
-docs/
-└── screenshots/
-    ├── dashboard.png
-    ├── products.png
-    ├── add-product.png
-    ├── stock-movement.png
-    └── reports.png
-If a screen is not implemented in your project, remove its image entry. Do not use sample images as though they are screenshots of the actual application.
-🧰 Technology Stack
-Technology	Purpose
-C#	Application programming language
-ASP.NET Core MVC	Web framework and MVC architecture
-Entity Framework Core	Object-relational mapping and database access
-MySQL	Relational database
-Bootstrap	Responsive styling and layout
-HTML / CSS	Page structure and presentation
-JavaScript	Client-side interactions, where used
-.NET SDK	Build and run the application
+## ✨ 3. Key Features
 
+### 📊 Dashboard
+Provides an overview of inventory information and helps users identify products that require attention, including low-stock items.
 
-🏗️ Project Structure
-The repository uses the ASP.NET Core MVC project layout. Main folders and files include:
+### 📦 Product Management
+Allows users to:
+- Add new products.
+- View product information.
+- Edit existing product details.
+- Delete product records.
+- Maintain product information such as name, SKU, category, and stock quantity, where supported by the application.
+
+### 🗂️ Category Management
+Organizes products into categories to make inventory records easier to maintain and navigate.
+
+### 🔄 Stock In and Stock Out
+Records stock movements when inventory is added or issued. Quantities are updated to reflect stock changes.
+
+### ✅ Stock Validation
+Validates stock-out transactions to help prevent users from issuing more items than are currently available.
+
+### 🏷️ SKU Validation
+Helps prevent duplicate SKU values so that products can be identified more consistently.
+
+### 📉 Low-Stock Monitoring
+Helps identify products whose available quantities fall below the configured stock threshold.
+
+### 📋 Stock Movement History
+Maintains records of stock transactions so users can review inventory changes.
+
+### 📈 Inventory Reports
+Provides inventory-related information to help users review stock status and product records.
+
+### 📱 Responsive Interface
+Uses Bootstrap to provide a structured interface that adapts to different screen sizes.
+
+*Note: The availability of individual features depends on the implementation in the current project source code.*
+
+## 🛠️ 4. Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| C# | Main programming language |
+| ASP.NET Core MVC | Web application framework and MVC architecture |
+| Entity Framework Core | Database access and object-relational mapping |
+| MySQL | Relational database for inventory data |
+| HTML5 | Web page structure |
+| CSS3 | Styling and page presentation |
+| Bootstrap | Responsive layouts and interface components |
+| JavaScript | Client-side interactions, where used |
+| .NET SDK | Building and running the application |
+
+## 🏗️ 5. System Architecture
+
+StockWise follows the Model-View-Controller (MVC) architecture.
+
+### Model
+Represents the application's data entities, such as products, categories, and stock movements.
+
+### View
+Provides the user interface through Razor views and HTML pages.
+
+### Controller
+Handles incoming requests, processes user actions, and coordinates application operations.
+
+### Database Layer
+Entity Framework Core communicates with MySQL to store, retrieve, and update inventory information.
+
+### Application Workflow
+
+1. The user opens a page in the web application.
+2. The controller receives the request.
+3. The application processes the requested operation.
+4. Entity Framework Core communicates with the MySQL database when data access is required.
+5. The application returns the appropriate view or result.
+6. The user sees the updated inventory information.
+
+## 🗂️ 6. Project Structure
+
+The main project folders follow the ASP.NET Core MVC structure.
+
+```text
 Inventory-Stock-Management-System/
-├── Controllers/       # Request handling and application logic
-├── Data/              # Database context and data configuration
-├── Migrations/        # Entity Framework Core schema migrations
-├── Models/            # Application data models
-├── Views/             # Razor views and UI pages
-├── wwwroot/           # Static assets such as CSS and JavaScript
-├── Program.cs         # Application startup and service configuration
-├── appsettings.json   # Application configuration
+│
+├── Controllers/
+│   └── Application controllers
+│
+├── Data/
+│   └── Database context and configuration
+│
+├── Migrations/
+│   └── Entity Framework Core migrations
+│
+├── Models/
+│   └── Application data models
+│
+├── Views/
+│   └── Razor views and user interface pages
+│
+├── wwwroot/
+│   └── CSS, JavaScript, and static assets
+│
+├── Program.cs
+│   └── Application startup and service configuration
+│
+├── appsettings.json
+│   └── Application configuration
+│
 └── README.md
-Folder contents may differ slightly from this overview.
-⚙️ Prerequisites
-Install the following before running the project:
-- .NET 8 SDK
-- MySQL Server
-- Git (for cloning the repository)
-- An editor such as Visual Studio or Visual Studio Code
-🚀 Getting Started
-1. Clone the repository
-git clone https://github.com/Abhiraj14206/Inventory-Stock-Management-System.git
-cd Inventory-Stock-Management-System
-2. Configure MySQL
-Start your local MySQL server and create the database if your application does not create it automatically:
-CREATE DATABASE inventory_stock_db;
-Open appsettings.json and configure the connection string used by your project. For example:
-{
-  "ConnectionStrings": {
-    "DefaultConnection": "server=localhost;port=3306;database=inventory_stock_db;user=YOUR_MYSQL_USER;password=YOUR_MYSQL_PASSWORD;"
-  }
-}
-Replace the example credentials with your local MySQL credentials. The connection-string name must match the name used in your application code. Do not commit real passwords or other secrets to a public repository.
-3. Restore packages
-dotnet restore
-4. Apply database migrations
-If the repository already contains Entity Framework Core migrations, apply them:
-dotnet ef database update
-If dotnet ef is not installed, install a tool version compatible with the project's EF Core version. Do not create another initial migration when suitable migrations already exist.
-5. Run the application
-dotnet run
-Open the local URL printed in the terminal. The port may vary by configuration.
-🗃️ Database
-The development configuration uses a MySQL database named inventory_stock_db. The project includes inventory-related data such as products, categories, and stock movements. Entity Framework Core migrations are used to manage schema changes where configured.
-🔐 Security Notes
-- Never publish real database passwords, API keys, or other secrets.
-- Use local user secrets or environment variables for sensitive configuration.
-- Review appsettings.json before pushing changes to a public GitHub repository.
-- This project is an educational starter and should be reviewed and hardened before production use.
-🔮 Possible Future Improvements
-- User authentication and role-based permissions
-- Supplier and purchase-order management
-- Sales, invoices, and returns
-- Search, filtering, and pagination for large inventories
-- Exportable reports
-- Automated tests and deployment instructions
-- Improved audit logging and handling of simultaneous stock updates
-These are possible enhancements, not a claim that they are already implemented.
-🎓 Project Purpose
-StockWise demonstrates how an MVC web application can combine database-backed CRUD operations, inventory transactions, validation, and a responsive user interface to support basic stock management.
-👨‍💻 Author
-Abhiraj
+    └── Project documentation
+```
 
-GitHub: @Abhiraj14206
-<div align="center">
+*This is a representative structure. Actual files and subfolders may differ in the repository.*
 
-Made with C#, ASP.NET Core MVC, Entity Framework Core, and MySQL.
-</div>
+## ⚙️ 7. System Requirements
+
+Before running the project, install the following:
+
+- **.NET 8 SDK**
+- **MySQL Server**
+- **Git** (optional
