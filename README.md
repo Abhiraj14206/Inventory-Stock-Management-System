@@ -143,7 +143,7 @@ Inventory-Stock-Management-System/
 
 ## 👨‍🎓 7. Student Details
 
-- **Name:** Abhiraj
+- **Name:** Abhiraj Medhat
 - **Enrollment Number:** 202403103510478
 - **Project Title:** StockWise — Inventory and Stock Management System
 
