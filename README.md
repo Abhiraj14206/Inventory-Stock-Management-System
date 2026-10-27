@@ -105,6 +105,7 @@ Entity Framework Core communicates with MySQL to store, retrieve, and update inv
 5. The application returns the appropriate view or result.
 6. The user sees the updated inventory information.
 
+
 ## 🗂️ 6. Project Structure
 
 The main project folders follow the ASP.NET Core MVC structure.
@@ -140,12 +141,27 @@ Inventory-Stock-Management-System/
     └── Project documentation
 ```
 
-*This is a representative structure. Actual files and subfolders may differ in the repository.*
+## 👨‍🎓 7. Student Details
 
-## ⚙️ 7. System Requirements
+- **Name:** Abhiraj
+- **Enrollment Number:** 202403103510478
+- **Project Title:** StockWise — Inventory and Stock Management System
 
-Before running the project, install the following:
+## 👨‍💻 8. Author
 
-- **.NET 8 SDK**
-- **MySQL Server**
-- **Git** (optional
+**Abhiraj**
+
+GitHub Profile: [Abhiraj14206](https://github.com/Abhiraj14206)
+
+Project Repository: [Inventory Stock Management System](https://github.com/Abhiraj14206/Inventory-Stock-Management-System)
+
+---
+
+<div align="center">
+
+**StockWise — Inventory Made Easier**
+
+Developed using ASP.NET Core MVC, C#, Entity Framework Core, and MySQL.
+
+</div>
+
