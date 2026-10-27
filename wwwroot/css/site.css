@@ -1,0 +1,9 @@
+body { background: #f6f8fc; color: #1f2937; }
+.navbar { box-shadow: 0 2px 12px rgba(0,0,0,.08); }
+.metric { background: #fff; border: 1px solid #e5eaf2; border-radius: 14px; padding: 20px; height: 100%; box-shadow: 0 4px 14px rgba(30,50,90,.04); }
+.metric-number { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 750; margin-top: 8px; }
+.card { border: 1px solid #e5eaf2; border-radius: 14px; overflow: hidden; }
+.card-header { padding: 14px 18px; }
+.table th { color: #526174; font-size: .85rem; white-space: nowrap; }
+.table td { vertical-align: middle; }
+footer { background: #fff; }

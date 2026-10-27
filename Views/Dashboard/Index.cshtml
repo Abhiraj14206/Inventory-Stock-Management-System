@@ -1,0 +1,16 @@
+@{ ViewData["Title"] = "Dashboard"; }
+<div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4"><div><h1 class="h2 fw-bold">Inventory Dashboard</h1><p class="text-muted mb-0">Monitor products and stock at a glance.</p></div><a class="btn btn-primary" asp-controller="Products" asp-action="Create">+ Add product</a></div>
+<div class="row g-3 mb-4">
+ <div class="col-6 col-lg-3"><div class="metric"><div class="text-muted">Products</div><div class="metric-number">@ViewBag.ProductCount</div></div></div>
+ <div class="col-6 col-lg-3"><div class="metric"><div class="text-muted">Units in stock</div><div class="metric-number">@ViewBag.TotalUnits</div></div></div>
+ <div class="col-6 col-lg-3"><div class="metric"><div class="text-muted">Low-stock items</div><div class="metric-number text-danger">@ViewBag.LowStockCount</div></div></div>
+ <div class="col-6 col-lg-3"><div class="metric"><div class="text-muted">Stock value*</div><div class="metric-number">₹@(((decimal)ViewBag.StockValue).ToString("N0"))</div></div></div>
+</div>
+<div class="row g-4"><div class="col-lg-7"><div class="card shadow-sm"><div class="card-header bg-white fw-semibold">Products requiring attention</div><div class="table-responsive"><table class="table table-hover mb-0"><thead><tr><th>Product</th><th>Category</th><th>Qty</th><th>Status</th></tr></thead><tbody>
+@foreach (Product p in (IEnumerable<Product>)ViewBag.LowStockProducts) { <tr><td>@p.Name</td><td>@p.Category?.Name</td><td>@p.Quantity</td><td><span class="badge bg-danger">Low stock</span></td></tr> }
+@if (((IEnumerable<Product>)ViewBag.LowStockProducts).Any() == false) { <tr><td colspan="4" class="text-center text-muted py-4">No low-stock products.</td></tr> }
+</tbody></table></div></div><p class="small text-muted mt-2">*Illustrative valuation based on current unit price.</p></div>
+<div class="col-lg-5"><div class="card shadow-sm"><div class="card-header bg-white fw-semibold">Recent stock movements</div><div class="list-group list-group-flush">
+@foreach (StockMovement m in (IEnumerable<StockMovement>)ViewBag.RecentMovements) { <div class="list-group-item d-flex justify-content-between gap-2"><div><div class="fw-semibold">@m.Product?.Name</div><small class="text-muted">@m.CreatedAt.ToLocalTime().ToString("dd MMM yyyy, hh:mm tt")</small></div><span class="badge align-self-center @(m.Type == "IN" ? "bg-success" : "bg-warning text-dark")">@(m.Type == "IN" ? "+" : "−")@m.Quantity</span></div> }
+@if (((IEnumerable<StockMovement>)ViewBag.RecentMovements).Any() == false) { <div class="list-group-item text-muted">No movements recorded yet.</div> }
+</div><div class="card-body"><a asp-controller="Stock" asp-action="Create" class="btn btn-outline-primary w-100">Record stock movement</a></div></div></div></div>

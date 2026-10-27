@@ -1,0 +1,7 @@
+@model IEnumerable<Product>
+@{ ViewData["Title"] = "Reports"; }
+<h1 class="h2 fw-bold mb-4">Inventory report</h1>
+<div class="row g-3 mb-4"><div class="col-6 col-lg-3"><div class="metric"><div class="text-muted">Products</div><div class="metric-number">@ViewBag.TotalProducts</div></div></div><div class="col-6 col-lg-3"><div class="metric"><div class="text-muted">Units</div><div class="metric-number">@ViewBag.TotalUnits</div></div></div><div class="col-6 col-lg-3"><div class="metric"><div class="text-muted">Low stock</div><div class="metric-number text-danger">@ViewBag.LowStock</div></div></div><div class="col-6 col-lg-3"><div class="metric"><div class="text-muted">Estimated value</div><div class="metric-number">₹@(((decimal)ViewBag.InventoryValue).ToString("N0"))</div></div></div></div>
+<div class="card shadow-sm"><div class="card-header bg-white fw-semibold">Current product stock</div><div class="table-responsive"><table class="table table-striped mb-0"><thead><tr><th>Product</th><th>Category</th><th>Quantity</th><th>Minimum</th><th>Unit price</th><th>Estimated value</th></tr></thead><tbody>
+@foreach (var p in Model) { <tr><td>@p.Name</td><td>@p.Category?.Name</td><td>@p.Quantity</td><td>@p.MinimumStock</td><td>₹@p.UnitPrice.ToString("N2")</td><td>₹@((p.Quantity * p.UnitPrice).ToString("N2"))</td></tr> }
+</tbody></table></div></div>

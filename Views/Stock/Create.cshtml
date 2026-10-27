@@ -1,0 +1,11 @@
+@model StockMovement
+@{ ViewData["Title"] = "Record stock movement"; }
+<h1 class="h2 fw-bold mb-3">Record stock movement</h1><div class="card shadow-sm"><div class="card-body"><form asp-action="Create" method="post">
+<div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+<div class="mb-3"><label asp-for="ProductId" class="form-label">Product</label><select asp-for="ProductId" asp-items="ViewBag.ProductId" class="form-select"><option value="">Select product</option></select><span asp-validation-for="ProductId" class="text-danger"></span></div>
+<div class="mb-3"><label asp-for="Type" class="form-label">Movement type</label><select asp-for="Type" class="form-select"><option value="">Select type</option><option value="IN">Stock In (purchase)</option><option value="OUT">Stock Out (sale/use)</option></select><span asp-validation-for="Type" class="text-danger"></span></div>
+<div class="mb-3"><label asp-for="Quantity" class="form-label"></label><input asp-for="Quantity" class="form-control" /><span asp-validation-for="Quantity" class="text-danger"></span></div>
+<div class="mb-3"><label asp-for="Notes" class="form-label"></label><input asp-for="Notes" class="form-control" placeholder="Optional reference or note" /><span asp-validation-for="Notes" class="text-danger"></span></div>
+<button class="btn btn-primary" type="submit">Save movement</button> <a asp-action="Index" class="btn btn-outline-secondary">Cancel</a>
+</form></div></div>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

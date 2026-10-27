@@ -1,0 +1,4 @@
+@model Product
+@{ ViewData["Title"] = "Edit product"; }
+<h1 class="h2 fw-bold mb-3">Edit product</h1><div class="card shadow-sm"><div class="card-body"><form asp-action="Edit" asp-route-id="@Model.Id" method="post"><input type="hidden" asp-for="Id" /><partial name="_Form" model="Model" /></form></div></div>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }
