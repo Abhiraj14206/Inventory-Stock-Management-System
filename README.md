@@ -1,130 +1,138 @@
-StockWise — Inventory and Stock Management System
-<p align="center">
-  <strong>A web-based inventory management application built with ASP.NET Core MVC, Entity Framework Core, MySQL, and Bootstrap.</strong>
-</p>
+<div align="center">
 
-<p align="center">
-  <img src="https://img.shields.io/badge/ASP.NET%20Core-MVC-512BD4?logo=dotnet&logoColor=white" alt="ASP.NET Core MVC" />
-  <img src="https://img.shields.io/badge/C%23-Programming%20Language-239120?logo=csharp&logoColor=white" alt="C sharp" />
-  <img src="https://img.shields.io/badge/Database-MySQL-4479A1?logo=mysql&logoColor=white" alt="MySQL" />
-  <img src="https://img.shields.io/badge/UI-Bootstrap-7952B3?logo=bootstrap&logoColor=white" alt="Bootstrap" />
-</p>
+StockWise
+Inventory and Stock Management System
+A web-based inventory management application built with ASP.NET Core MVC, C#, Entity Framework Core, MySQL, and Bootstrap.
+
+
+
+
+Manage products. Track stock. Monitor inventory.
+
+Features · Screenshots · Setup · Project Structure
+</div>
 
 📌 About the Project
-StockWise is an inventory and stock management system designed to help users organize products, manage categories, track stock changes, and monitor low-stock items from a web interface. It is a student/learning project demonstrating CRUD operations, database integration, validation, and a responsive MVC application structure.
+StockWise is an inventory and stock management web application designed to help users maintain product records, organize products into categories, record stock-in and stock-out transactions, and identify low-stock items.
+
+The project demonstrates an ASP.NET Core MVC application connected to a MySQL database through Entity Framework Core. It is intended as a learning/academic project and a foundation for further development.
 ✨ Features
-- Dashboard: View key inventory information and low-stock items.
-- Product management: Add, view, edit, and delete products.
-- SKU validation: Help prevent duplicate product SKU values.
-- Category management: Organize products by category.
-- Stock In / Stock Out: Record stock movements and update quantities.
-- Stock validation: Prevent stock-out transactions that exceed available quantity.
-- Movement history: Review recorded inventory movements.
-- Low-stock monitoring: Identify products that need replenishment.
-- Reports: Review inventory and stock information.
-- Responsive interface: Bootstrap-based layouts for desktop and smaller screens.
-- Database persistence: Store application data in MySQL using Entity Framework Core.
+- Dashboard — view key inventory information and low-stock items.
+- Product management — create, view, update, and delete product records.
+- SKU validation — help prevent duplicate SKU values.
+- Category management — organize products by category.
+- Stock In / Stock Out — record stock movements and update quantities.
+- Stock validation — prevent a stock-out transaction from exceeding available quantity.
+- Stock movement history — review recorded inventory transactions.
+- Low-stock monitoring — identify products that may need replenishment.
+- Reports — review inventory and stock information.
+- Responsive UI — Bootstrap-based interface for desktop and smaller screens.
+- Database persistence — save application data in MySQL using Entity Framework Core.
+Features can vary with the version of the source code. Keep this list aligned with the pages and functionality implemented in your repository.
+
 🖼️ Application Screenshots
-Add your own screenshots to docs/screenshots/ using the filenames shown below. GitHub will render the images once the files are committed. These image links are placeholders until you add the screenshots.
+Add screenshots captured from your running StockWise application to docs/screenshots/. The images will appear here after you commit them to GitHub.
+<table>
+  <tr>
+    <td align="center"><strong>Dashboard</strong><br><img src="docs/screenshots/dashboard.png" alt="StockWise dashboard screenshot" width="480"></td>
+    <td align="center"><strong>Product List</strong><br><img src="docs/screenshots/products.png" alt="StockWise product list screenshot" width="480"></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Add Product</strong><br><img src="docs/screenshots/add-product.png" alt="StockWise add product screenshot" width="480"></td>
+    <td align="center"><strong>Stock Movement</strong><br><img src="docs/screenshots/stock-movement.png" alt="StockWise stock movement screenshot" width="480"></td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2"><strong>Reports</strong><br><img src="docs/screenshots/reports.png" alt="StockWise reports screenshot" width="600"></td>
+  </tr>
+</table>
 
-Dashboard
 
-Product List
-
-Add Product
-
-Stock Movement
-
-Reports
-
-🧰 Technologies Used
+Screenshot folder layout:
+docs/
+└── screenshots/
+    ├── dashboard.png
+    ├── products.png
+    ├── add-product.png
+    ├── stock-movement.png
+    └── reports.png
+If a screen is not implemented in your project, remove its image entry. Do not use sample images as though they are screenshots of the actual application.
+🧰 Technology Stack
 Technology	Purpose
 C#	Application programming language
-ASP.NET Core MVC	Web application framework and MVC structure
+ASP.NET Core MVC	Web framework and MVC architecture
 Entity Framework Core	Object-relational mapping and database access
 MySQL	Relational database
-Bootstrap	Responsive user interface styling
-HTML and CSS	Page structure and presentation
-JavaScript	Client-side interactions where used
+Bootstrap	Responsive styling and layout
+HTML / CSS	Page structure and presentation
+JavaScript	Client-side interactions, where used
 .NET SDK	Build and run the application
 
 
-🏗️ Application Structure
-The project follows the ASP.NET Core MVC pattern:
-- Models: Represent application entities and data.
-- Views: Render the user interface using Razor views.
-- Controllers: Handle requests and coordinate application actions.
-- Data / DbContext: Configure Entity Framework Core database access.
-- Migrations: Track database schema changes.
-- wwwroot: Contains static assets such as CSS, JavaScript, and images.
-Exact folder names may vary depending on the current project structure.
-
+🏗️ Project Structure
+The repository uses the ASP.NET Core MVC project layout. Main folders and files include:
+Inventory-Stock-Management-System/
+├── Controllers/       # Request handling and application logic
+├── Data/              # Database context and data configuration
+├── Migrations/        # Entity Framework Core schema migrations
+├── Models/            # Application data models
+├── Views/             # Razor views and UI pages
+├── wwwroot/           # Static assets such as CSS and JavaScript
+├── Program.cs         # Application startup and service configuration
+├── appsettings.json   # Application configuration
+└── README.md
+Folder contents may differ slightly from this overview.
 ⚙️ Prerequisites
-Install the following before running the application:
+Install the following before running the project:
 - .NET 8 SDK
 - MySQL Server
-- A code editor such as Visual Studio or Visual Studio Code
-- Git, if you want to clone the repository
+- Git (for cloning the repository)
+- An editor such as Visual Studio or Visual Studio Code
 🚀 Getting Started
 1. Clone the repository
 git clone https://github.com/Abhiraj14206/Inventory-Stock-Management-System.git
 cd Inventory-Stock-Management-System
-2. Configure the database connection
-Open appsettings.json and configure the connection string for your local MySQL server. Example format:
+2. Configure MySQL
+Start your local MySQL server and create the database if your application does not create it automatically:
+CREATE DATABASE inventory_stock_db;
+Open appsettings.json and configure the connection string used by your project. For example:
 {
   "ConnectionStrings": {
     "DefaultConnection": "server=localhost;port=3306;database=inventory_stock_db;user=YOUR_MYSQL_USER;password=YOUR_MYSQL_PASSWORD;"
   }
 }
-Use the connection-string key expected by your project if it differs from DefaultConnection. Replace the example username and password with your local credentials. Never commit real passwords, API keys, or other secrets to GitHub.
-3. Restore dependencies
+Replace the example credentials with your local MySQL credentials. The connection-string name must match the name used in your application code. Do not commit real passwords or other secrets to a public repository.
+3. Restore packages
 dotnet restore
-4. Apply Entity Framework Core migrations
-If the repository contains migrations, run:
+4. Apply database migrations
+If the repository already contains Entity Framework Core migrations, apply them:
 dotnet ef database update
-If the dotnet ef command is unavailable, install the EF Core CLI tool compatible with the project's Entity Framework Core version. If no migrations are included, create the initial migration only after checking the project's existing database configuration:
-dotnet ef migrations add InitialCreate
-dotnet ef database update
-Do not create a duplicate initial migration if migrations already exist.
+If dotnet ef is not installed, install a tool version compatible with the project's EF Core version. Do not create another initial migration when suitable migrations already exist.
 5. Run the application
 dotnet run
-Open the local URL printed in the terminal, for example http://localhost:5000 or the HTTPS URL shown by the application. The actual port may differ by configuration.
+Open the local URL printed in the terminal. The port may vary by configuration.
 🗃️ Database
-The application is configured to use a MySQL database named inventory_stock_db in the development setup. The project includes inventory-related entities for products, categories, and stock movements. EF Core migrations are used to create or update the schema when migrations are present.
-📸 How to Add Screenshots to This README
-1. Run the application locally.
-2. Capture screenshots of the dashboard, product list, Add Product page, stock movement page, and reports page.
-3. Create a folder named docs/screenshots in the repository root.
-4. Save the screenshots with these exact names:
-   - dashboard.png
-   - products.png
-   - add-product.png
-   - stock-movement.png
-   - reports.png
-5. Commit the images and README:
-git add README.md docs/screenshots
-git commit -m "Add project README and screenshots"
-git push
-If a page is not implemented in your version, remove its screenshot entry rather than adding a misleading image.
-🔒 Security Notes
-- Keep local database passwords out of source control.
-- Use placeholder values in documentation and sample configuration.
-- Review appsettings.json and any environment-specific settings before making the repository public.
-- This project is intended as an educational starter and should receive a security review before production use.
-🚧 Scope and Future Enhancements
-Possible future improvements include:
-- User authentication and role-based authorization
+The development configuration uses a MySQL database named inventory_stock_db. The project includes inventory-related data such as products, categories, and stock movements. Entity Framework Core migrations are used to manage schema changes where configured.
+🔐 Security Notes
+- Never publish real database passwords, API keys, or other secrets.
+- Use local user secrets or environment variables for sensitive configuration.
+- Review appsettings.json before pushing changes to a public GitHub repository.
+- This project is an educational starter and should be reviewed and hardened before production use.
+🔮 Possible Future Improvements
+- User authentication and role-based permissions
 - Supplier and purchase-order management
-- Sales and invoice management
+- Sales, invoices, and returns
+- Search, filtering, and pagination for large inventories
 - Exportable reports
-- Search, filtering, and pagination for large product lists
-- Audit logging and stronger protection against simultaneous stock updates
-- Automated tests and deployment configuration
-These are suggested enhancements and may not be implemented in the current version.
+- Automated tests and deployment instructions
+- Improved audit logging and handling of simultaneous stock updates
+These are possible enhancements, not a claim that they are already implemented.
 🎓 Project Purpose
-StockWise demonstrates how a web application can combine an MVC architecture, database-backed CRUD operations, stock validation, and a responsive interface to support basic inventory management workflows.
+StockWise demonstrates how an MVC web application can combine database-backed CRUD operations, inventory transactions, validation, and a responsive user interface to support basic stock management.
 👨‍💻 Author
 Abhiraj
 
 GitHub: @Abhiraj14206
-<p align="center">Made as a learning project using ASP.NET Core and MySQL.<
+<div align="center">
+
+Made with C#, ASP.NET Core MVC, Entity Framework Core, and MySQL.
+</div>
